@@ -1,0 +1,31 @@
+name: terabox-bot
+services:
+  - name: terabox-bot-service
+    git:
+      branch: main
+    build:
+      command: pip install -r requirements.txt
+    run:
+      command: python main.py
+    env:
+      - key: BOT_TOKEN
+        value: "7642271614:AAE65-0CW1g4hhXk2yM719kUHxle6TkCiUk"
+      - key: API_ID
+        value: "12380656"
+      - key: API_HASH
+        value: "be63383612b8f4eb0c65e88a7a49b2b8"
+      - key: MONGO_URI
+        value: "mongodb+srv://jaydipmore74:xCpTm5OPAfRKYnif@cluster0.5jo18.mongodb.net/?retryWrites=true&w=majority"
+      - key: LOG_GROUP_ID
+        value: "-1002469952747"
+      - key: SUPPORT_GROUP
+        value: "https://t.me/YARO_KA_ADDAA"
+      - key: SUPPORT_CHANNEL
+        value: "https://t.me/KomalMusicUpdate"
+      - key: PORT
+        value: "8000"
+    ports:
+      - port: 8000
+        protocol: http
+    scaling:
+      instances: 1
